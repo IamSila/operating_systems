@@ -19,4 +19,17 @@ int main(int argc, char *argv[])
     fprintf(stderr, "fork failed\n");
     exit(1);
   }
+  else if
+  {
+    if (rc == 0)
+    {
+      // going to create a new child process
+      printf("child (pid:%d)\n", (int) getpid());
+    }
+  }
+  else
+  {
+    printf("parent of %d (pid:%d)", rc, (int) getpid());
+  }
+  return (0);
 }
