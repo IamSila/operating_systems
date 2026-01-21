@@ -1,0 +1,8 @@
+# A focus on os apis and how to use them
+- how to create process in UNIX systems
+- fork() and exec()
+
+
+## fork()
+- creates a new process
+- 
