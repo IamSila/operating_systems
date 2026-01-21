@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <sys/wait.h>
 
 /**
  * main - entry for the program
@@ -19,14 +20,16 @@ int main(int argc, char *argv[])
     fprintf(stderr, "fork failed\n");
     exit(1);
   }
-  else if (rc == 0)
-  {
+  else if (rc == 0) // the return value of 0 is returned to the child...on successfull creation of the child 
+  { 
       // going to create a new child process
     printf("child (pid:%d)\n", (int) getpid());
   }
-  else
+  else // the process id of the child is returned to the parent
   {
-    printf("parent of %d (pid:%d)\n", rc, (int) getpid());
+    int rc_wait = wait(NULL);
+    printf("parent of %d (rc_wait:%d) (pid:%d)", rc, rc_wait, (int) getpid());
   }
   return (0);
 }
+
