@@ -27,4 +27,11 @@
 - The question here is how can an operating system regain control of the cpu so that it can switch between processes?
 - Answer: A cooperating Approach: wait for system calls.
 - In this style, the OS trusts the processes of the system to behave reasonably. Processes that run for too long are assumed to periodically give up the CPU so that the OS can decide to run some other task.
--
+- in a cooperative scheduling system, the OS regains control of
+the CPU by waiting for a system call or an illegal operation of some kind to take place.
+- There is also a non- cooperative approach: the os takes control.
+
+
+## saving and restoring context.
+- context switch -> low level piece of code responsible for switching between programs.
+- A context switch is conceptually simple: all the OS has to do is save a few register values for the currently-executing process (onto its kernel stack, for example) and restore a few for the soon-to-be-executing process (from its kernel stack). 
