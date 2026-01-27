@@ -19,4 +19,12 @@
     - free the memory.
     - remove the process from the list.
 
+## Restricted operations
+- The program must be able to perfom i/o operations or some kind of restricted operations, but without giving the process complete control over the system. How can the os and the hardware work together to do so?
+- Trap tables, user mode, kernel mode, management of permissions, ---> This was an intresting read. 
 
+## Switching between Processes.
+- The question here is how can an operating system regain control of the cpu so that it can switch between processes?
+- Answer: A cooperating Approach: wait for system calls.
+- In this style, the OS trusts the processes of the system to behave reasonably. Processes that run for too long are assumed to periodically give up the CPU so that the OS can decide to run some other task.
+-
